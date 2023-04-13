@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="../images/favicon.ico">
+    <link rel="stylesheet" href="../CSS/style.css">
+    <link rel="stylesheet" href="../CSS/style-cadastros.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <title>Cadastro de pensionistas</title>
+</head>
+<body>
+
+    <nav class="navbar">
+
+        <div class="max-width"> <!-- Iniciando div max-width-->
+            <div class="logo"><a href="index.html">IMPRESB</a></div> 
+
+            <ul class="menu" id="menu-site">
+                <li class="dropdown">
+                    <a href="#aposentados" class="dropbtn"><b>Aposentados</b></a>
+                    <div class="dropdown-content">
+                      <a href="cadastrar-aposentados.html">Cadastrar Aposentados</a>
+                      <a href="#">Gerenciar Aposentados</a>
+                    </div>
+                </li>
+
+                <li class="dropdown">
+                    <a href="#pensionistas" class="dropbtn"><b>Pensionistas</b></a>
+                    <div class="dropdown-content">
+                      <a href="cadastrar-pensionista.html">Cadastrar Pensionistas</a>
+                      <a href="#">Gerenciar Pensionistas</a>
+                    </div>
+                </li>
+
+                <li class="dropdown">
+                    <a href="#pensionistas" class="dropbtn"><b>Cálculo Atuarial</b></a>
+                    <div class="dropdown-content">
+                      <a href="#">Gerenciar Cálculo Atuarial</a>
+                      <a href="#">Ver Cálculo Atuarial</a>
+                    </div>
+                </li>
+            </ul>
+
+            <div class="menu-btn" id="menu-btn">
+                <i class="fa-solid fa-bars" id="menu-icon"></i>
+            </div>
+        </div> <!-- Fechando div max-width-->
+    </nav>
+
+    <article class="formato-pagina-corpo-imagem">
+        <div class="imagem">
+            <img src="../images/undraw_my_files_swob (1).svg">
+        </div>    
+        <div class="form">
+            <form action="#">
+                <div class="form-header">
+                    <div class="title">
+                        <h1>Cadastro de pensionistas</h1>
+                    </div>
+                </div>
+
+                <div class="input-group">
+                    <div class="input-box">
+                        <label for="firstname">Nome completo</label>
+                        <input id="firstname" type="text" name="firstname" placeholder="Digite o nome completo" required>
+                    </div>
+                    
+                    <div class="input-box">
+                        <label for="rg">Carteira de Identidade</label>
+                        <input id="rg" type="number" name="rg" placeholder="Digite o RG" required>
+                    </div>
+
+                    <div class="input-box">
+                        <label for="data-casamento">Data de casamento</label>
+                        <input id="data-casamento" type="date" name="data-casamento" required>
+                    </div>
+
+                    <div class="input-box">
+                        <label for="CPF">CPF</label>
+                        <input id="CPF" type="number" name="CPF" placeholder="Digite o CPF" required>
+                    </div>
+
+                    <div class="input-box">
+                        <label for="data-obito">Data de obito</label>
+                        <input id="data-obito" type="date" name="data-obito" required>
+                    </div>
+
+                    <div class="input-box">
+                        <label for="email">E-mail</label>
+                        <input id="email" type="email" name="email" placeholder="Digite o e-mail">
+                    </div>
+
+                    <div class="input-box">
+                        <label for="rua">Rua</label>
+                        <input id="rua" type="text" name="rua" placeholder="Rua Adolfo Maia, 102" required>
+                    </div>
+
+                    <div class="input-box">
+                        <label for="number">Celular</label>
+                        <input id="number" type="tel" name="number" placeholder="(xx) 9xxxx-xxxx" required>
+                    </div>
+
+                    <div class="input-box">
+                        <label for="data-nascimento">Data de nascimento</label>
+                        <input id="data-nascimento" type="date" name="data-nascimento" required>
+                    </div>
+
+
+
+
+                </div>
+
+                <div class="gender-inputs">
+                    <div class="gender-title">
+                        <h6>Gênero</h6>
+                    </div>
+
+                    <div class="gender-group">
+                        <div class="gender-input">
+                            <input id="female" type="radio" name="gender">
+                            <label for="female">Feminino</label>
+                        </div>
+
+                        <div class="gender-input">
+                            <input id="male" type="radio" name="gender">
+                            <label for="male">Masculino</label>
+                        </div>
+
+                        <div class="gender-input">
+                            <input id="others" type="radio" name="gender">
+                            <label for="others">Outros</label>
+                        </div>
+
+                        <div class="gender-input">
+                            <input id="none" type="radio" name="gender">
+                            <label for="none">Prefiro não dizer</label>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="continue-button">
+                    <button><a href="">Continuar</a></button>
+                </div>
+            </form>
+        </div>
+    </article>
+
+
+
+
+    <script src="../JS/script-index.js"></script>
+</body>
+</html>

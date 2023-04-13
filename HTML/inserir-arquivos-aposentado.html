@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="../images/favicon.ico">
+    <link rel="stylesheet" href="../CSS/style.css">
+    <link rel="stylesheet" href="../CSS/style-continuacao-cadastro-aposentado.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <title>Cadastro de pensionistas</title>
+</head>
+<body>
+
+    <nav class="navbar">
+
+        <div class="max-width"> <!-- Iniciando div max-width-->
+            <div class="logo"><a href="index.html">IMPRESB</a></div> 
+
+            <ul class="menu" id="menu-site">
+                <li class="dropdown">
+                    <a href="#aposentados" class="dropbtn"><b>Aposentados</b></a>
+                    <div class="dropdown-content">
+                      <a href="cadastrar-aposentados.html">Cadastrar Aposentados</a>
+                      <a href="#">Gerenciar Aposentados</a>
+                    </div>
+                </li>
+
+                <li class="dropdown">
+                    <a href="#pensionistas" class="dropbtn"><b>Pensionistas</b></a>
+                    <div class="dropdown-content">
+                      <a href="cadastrar-pensionista.html">Cadastrar Pensionistas</a>
+                      <a href="#">Gerenciar Pensionistas</a>
+                    </div>
+                </li>
+
+                <li class="dropdown">
+                    <a href="#pensionistas" class="dropbtn"><b>Cálculo Atuarial</b></a>
+                    <div class="dropdown-content">
+                      <a href="#">Gerenciar Cálculo Atuarial</a>
+                      <a href="#">Ver Cálculo Atuarial</a>
+                    </div>
+                </li>
+            </ul>
+
+            <div class="menu-btn" id="menu-btn">
+                <i class="fa-solid fa-bars" id="menu-icon"></i>
+            </div>
+        </div> <!-- Fechando div max-width-->
+    </nav>
+
+    <article class="formato-pagina-corpo-imagem">
+        <div class="imagem">
+            <img src="../images/undraw_portfolio_update_re_jqnp.svg">
+        </div>    
+        <div class="form">
+            <form action="#">
+                <div class="form-header">
+                    <div class="title">
+                        <h1>Continuação cadastro de aposentados</h1>
+                    </div>
+                </div>
+
+                <div class="input-group">
+                    <div class="input-box">
+                        <label for="requerimento">Requerimento</label>
+                        <input id = "requerimento" type="file" name="requerimento" required>
+                    </div>
+                    
+                    <div class="input-box">
+                        <label for="nao-recebimento">Declaração de não recebimento</label>
+                        <input id = "nao-recebimento" type="file" name = "nao-recebimento" required>
+                    </div>
+
+                    <div class="input-box">
+                        <label for="ficha-funcional">Ficha funcional</label>
+                        <input id = "ficha-funcional" type="file" name = "ficha-funcional" required>
+                    </div>
+
+                    <div class="input-box">
+                        <label for="comprovante-residencia">Comprovante de residência</label>
+                        <input id = "comprovante-residencia" type="file" name = "comprovante-residencia" required>
+                    </div>
+
+                    <div class="input-box">
+                        <label for="contra-cheque">Contra-cheque</label>
+                        <input id = "contra-cheque" type="file" name = "contra-cheque" required>
+                    </div>
+
+                    <div class="input-box">
+                        <label for="CTC">Certidão de tempo de serviço</label>
+                        <input id = "CTC" type="file" name = "CTC" required>
+                    </div>
+
+                    <div class="input-box">
+                        <label for="doc-pessoal">Documentação pessoal</label>
+                        <input id = "doc-pessoal" type="file" name = "doc-pessoal" required>
+                    </div>
+
+                    <div class="input-box">
+                        <label for="ficha-financeira">Ficha financeira</label>
+                        <input id = "ficha-financeira" type="file" name = "ficha-financeira" required>
+                    </div>
+
+                </div>
+
+                <div class="professor-inputs">
+                    <div class="professor-title">
+                        <h6>Professor</h6>
+                    </div>
+
+                    <div class="professor-group">
+                        <div class="professor-input">
+                            <input id="sim" type="radio" name="professor">
+                            <label for="nao">Sim</label>
+                        </div>
+
+
+                        <div class="input-box">
+                            <label for="CTM">Certidão de magistério</label>
+                            <input id = "CTM" type="file" name = "CTM">
+                        </div>
+
+                        <div class="professor-input">
+                            <input id="nao" type="radio" name="professor">
+                            <label for="nao">Não</label>
+                        </div>
+
+                    </div>
+                </div>
+
+                <div class="continue-button">
+                    <button><a href="">Cadastrar</a></button>
+                </div>
+            </form>
+        </div>
+    </article>
+
+
+
+
+    <script src="../JS/script-index.js"></script>
+</body>
+</html>
