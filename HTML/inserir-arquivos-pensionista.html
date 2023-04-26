@@ -6,9 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="shortcut icon" href="../images/favicon.ico">
     <link rel="stylesheet" href="../CSS/style.css">
-    <link rel="stylesheet" href="../CSS/style-cadastros.css">
+    <link rel="stylesheet" href="../CSS/style-continuacao-cadastro-aposentado.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <title>Cadastro de aposentados</title>
+    <title>Continuação do cadastro de pensionistas</title>
 </head>
 <body>
 
@@ -51,93 +51,93 @@
 
     <article class="formato-pagina-corpo-imagem">
         <div class="imagem">
-            <img src="../images/undraw_personal_site_re_c4bp (1).svg">
+            <img src="../images/undraw_portfolio_update_re_jqnp.svg">
         </div>    
         <div class="form">
             <form action="#">
                 <div class="form-header">
                     <div class="title">
-                        <h1>Cadastro de aposentados</h1>
+                        <h1>Continuação cadastro de pensionistas</h1>
                     </div>
                 </div>
 
                 <div class="input-group">
                     <div class="input-box">
-                        <label for="firstname">Nome completo</label>
-                        <input id="firstname" type="text" name="firstname" placeholder="Digite o nome completo">
+                        <label for="requerimento">Requerimento</label>
+                        <input id = "requerimento" type="file" name="requerimento" required>
+                    </div>
+                    
+                    <div class="input-box">
+                        <label for="nao-recebimento">Declaração de não recebimento</label>
+                        <input id = "nao-recebimento" type="file" name = "nao-recebimento" required>
                     </div>
 
                     <div class="input-box">
-                        <label for="data-nascimento">Data de nascimento</label>
-                        <input id="data-nascimento" type="date" name="data-nascimento" placeholder="Digite a data de nascimento">
+                        <label for="ficha-funcional">Ficha funcional</label>
+                        <input id = "ficha-funcional" type="file" name = "ficha-funcional" required>
                     </div>
 
                     <div class="input-box">
-                        <label for="rg">Carteira de Identidade</label>
-                        <input id="rg" type="number" name="rg" placeholder="Digite o RG">
+                        <label for="comprovante-residencia">Comprovante de residência</label>
+                        <input id = "comprovante-residencia" type="file" name = "comprovante-residencia" required>
                     </div>
 
                     <div class="input-box">
-                        <label for="CPF">CPF</label>
-                        <input id="CPF" type="number" name="CPF" placeholder="Digite o CPF">
+                        <label for="contra-cheque">Contra-cheque</label>
+                        <input id = "contra-cheque" type="file" name = "contra-cheque" required>
                     </div>
 
                     <div class="input-box">
-                        <label for="carteira-trabalho">Carteira de trabalho</label>
-                        <input id="carteira-trabalho" type="text" name="carteira-trabalho" placeholder="Dados da carteira de trabalho">
+                        <label for="CTC">Certidão de tempo de serviço</label>
+                        <input id = "CTC" type="file" name = "CTC" required>
                     </div>
 
                     <div class="input-box">
-                        <label for="email">E-mail</label>
-                        <input id="email" type="email" name="email" placeholder="Digite o e-mail">
+                        <label for="doc-pessoal">Documentação pessoal</label>
+                        <input id = "doc-pessoal" type="file" name = "doc-pessoal" required>
                     </div>
 
                     <div class="input-box">
-                        <label for="number">Celular</label>
-                        <input id="number" type="tel" name="number" placeholder="(xx) 9xxxx-xxxx">
-                    </div>
-
-                    <div class="input-box">
-                        <label for="rua">Rua</label>
-                        <input id="rua" type="text" name="rua" placeholder="Rua Adolfo Maia, 102">
+                        <label for="ficha-financeira">Ficha financeira</label>
+                        <input id = "ficha-financeira" type="file" name = "ficha-financeira" required>
                     </div>
 
                 </div>
 
-                <div class="gender-inputs">
-                    <div class="gender-title">
-                        <h6>Gênero</h6>
+                <div class="professor-inputs">
+                    <div class="professor-title">
+                        <h6>Professor</h6>
                     </div>
 
-                    <div class="gender-group">
-                        <div class="gender-input">
-                            <input id="female" type="radio" name="gender">
-                            <label for="female">Feminino</label>
+                    <div class="professor-group">
+                        <div class="professor-input">
+                            <input id="sim" type="radio" name="professor">
+                            <label for="nao">Sim</label>
                         </div>
 
-                        <div class="gender-input">
-                            <input id="male" type="radio" name="gender">
-                            <label for="male">Masculino</label>
+
+                        <div class="input-box">
+                            <label for="CTM">Certidão de magistério</label>
+                            <input id = "CTM" type="file" name = "CTM">
                         </div>
 
-                        <div class="gender-input">
-                            <input id="others" type="radio" name="gender">
-                            <label for="others">Outros</label>
+                        <div class="professor-input">
+                            <input id="nao" type="radio" name="professor">
+                            <label for="nao">Não</label>
                         </div>
 
-                        <div class="gender-input">
-                            <input id="none" type="radio" name="gender">
-                            <label for="none">Prefiro não dizer</label>
-                        </div>
                     </div>
                 </div>
 
                 <div class="continue-button">
-                    <button><a href="inserir-arquivos-aposentado.html">Continuar</a></button>
+                    <button><a href="">Cadastrar</a></button>
                 </div>
             </form>
         </div>
     </article>
+
+
+
 
     <script src="../JS/script-index.js"></script>
 </body>
