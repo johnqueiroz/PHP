@@ -84,7 +84,7 @@
                     <td>johnemerson67@gmail.com</td>
                     <td>83998341257</td>
                     <td>Rua Adolfo Maia, 102</td>
-                    <td><i class="fa-solid fa-pen-to-square fa-2xl"></i></td>
+                    <td id="editor"><i class="fa-solid fa-pen-to-square fa-2xl" onclick="abrirModal()"></i></td>
                     
                 </tr>
                 
@@ -95,7 +95,98 @@
 
     </section>
 
+    <dialog class="modal-lembrete">
 
+        <div class="lembretes-dentro-modal">
+
+            <div class="form">
+                <form action="#">
+                    <div class="form-header">
+                        <div class="title">
+                            <h1>Edição</h1>
+                        </div>
+                    </div>
+    
+                    <div class="input-group">
+                        <div class="input-box">
+                            <label for="firstname">Nome completo</label>
+                            <input id="firstname" type="text" name="firstname" placeholder="Digite o nome completo">
+                        </div>
+    
+                        <div class="input-box">
+                            <label for="data-nascimento">Data de nascimento</label>
+                            <input id="data-nascimento" type="date" name="data-nascimento" placeholder="Digite a data de nascimento">
+                        </div>
+    
+                        <div class="input-box">
+                            <label for="rg">Carteira de Identidade</label>
+                            <input id="rg" type="number" name="rg" placeholder="Digite o RG">
+                        </div>
+    
+                        <div class="input-box">
+                            <label for="CPF">CPF</label>
+                            <input id="CPF" type="number" name="CPF" placeholder="Digite o CPF">
+                        </div>
+    
+                        <div class="input-box">
+                            <label for="carteira-trabalho">Carteira de trabalho</label>
+                            <input id="carteira-trabalho" type="text" name="carteira-trabalho" placeholder="Dados da carteira de trabalho">
+                        </div>
+    
+                        <div class="input-box">
+                            <label for="email">E-mail</label>
+                            <input id="email" type="email" name="email" placeholder="Digite o e-mail">
+                        </div>
+    
+                        <div class="input-box">
+                            <label for="number">Celular</label>
+                            <input id="number" type="tel" name="number" placeholder="(xx) 9xxxx-xxxx">
+                        </div>
+    
+                        <div class="input-box">
+                            <label for="rua">Rua</label>
+                            <input id="rua" type="text" name="rua" placeholder="Rua Adolfo Maia, 102">
+                        </div>
+    
+                    </div>
+    
+                    <div class="gender-inputs">
+                        <div class="gender-title">
+                            <h6>Gênero</h6>
+                        </div>
+    
+                        <div class="gender-group">
+                            <div class="gender-input">
+                                <input id="female" type="radio" name="gender">
+                                <label for="female">Feminino</label>
+                            </div>
+    
+                            <div class="gender-input">
+                                <input id="male" type="radio" name="gender">
+                                <label for="male">Masculino</label>
+                            </div>
+    
+                            <div class="gender-input">
+                                <input id="others" type="radio" name="gender">
+                                <label for="others">Outros</label>
+                            </div>
+    
+                            <div class="gender-input">
+                                <input id="none" type="radio" name="gender">
+                                <label for="none">Prefiro não dizer</label>
+                            </div>
+                        </div>
+                    </div>
+    
+                    <div class="botoes">
+                        <button onclick="" class="deletar">Deletar</button>
+                        <button onclick="adicionar()" class="atualizar">Atualizar</button>
+                    </div>
+                </form>
+            </div>
+            
+        </div>
+    </dialog>
 
     <script src="../JS/script-index.js"></script>
 </body>
