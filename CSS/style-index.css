@@ -6,7 +6,10 @@
     --second-color: #385ec0;
     --third-color: #fff;
     --forth-color: #ed9c28;
+    --fifth-color: #dde0d9;
+    --border-hover: #0f9921f1;
 }
+
 
 .wrapper{
     width: 100%;
@@ -78,14 +81,13 @@
 }
 
 #lembrete{
-
     margin: 1rem 0;
     padding: 0.5rem 1.2rem;
-    border: none;
     border-radius: 10px;
-    box-shadow: 1px 1px 6px #0000001c;
     font-size: 0.8rem;
 }
+
+
 
 .adicionar{
     background-color: var(--active-color);
