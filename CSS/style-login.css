@@ -25,7 +25,6 @@
     margin: 150px 480px;
     width: 400px;
     height: 400px;
-
     outline: none;
 }
 
@@ -35,7 +34,8 @@
     font-weight: bold;
     color: var(--third-color);
     font-size: large;
-    padding-left: 140px;
+    justify-content: center;
+    display: flex;
     font-family: 'Ubuntu', 'sans-serif';
     border-radius: 5px 5px 0px 0px;
 }

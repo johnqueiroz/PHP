@@ -11,15 +11,37 @@
 </head>
 <body>
 
+    <?php
+
+      // Incluindo o arquivo
+      require '../PHP/Funcionarios.php';
+
+      // TROCAR O NOME LISTAR!!! NÃO ESTOU LISTANDO NADA AINDA!!!
+
+      // Instanciando a classe
+      // Criando o objeto $conectarFuncionarios
+      $conectarFuncionarios = new Funcionarios();
+
+      // Instanciar o metodo listar
+      $result = $conectarFuncionarios->conectar_Bd();
+
+      echo $result;
+    ?>
+
     <div class="form-area">
         <p class="title">Área de cadastro</p>
-        <form action="login.html" class="form">
+        <form action="../PHP/Funcionarios.php" class="form" method="POST">
 
             <div class="campos">
                 <i class="fa-solid fa-user fa-lg"></i>
                 <input type="text" name="email" id="" placeholder="E-mail" required>
             </div>
                 
+            <div class="campos">
+                <i class="fa-solid fa-user fa-lg"></i>
+                <input type="text" name="nome" id="" placeholder="Digite seu nome" required>
+            </div>
+
             <div class="campos">
                 <i class="fa-solid fa-lock fa-lg"></i>
                 <input type="password" name="senha" id="senha" placeholder="Senha" required>
@@ -31,7 +53,7 @@
             </div>
             
             <div class="button">
-              <button class="button-content">Cadastrar</button>
+              <button type="submit" class="button-content">Cadastrar</button>
             </div>
 
         </form>
