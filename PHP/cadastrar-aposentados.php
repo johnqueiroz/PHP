@@ -21,7 +21,7 @@
                 <li class="dropdown">
                     <a href="#aposentados" class="dropbtn"><b>Aposentados</b></a>
                     <div class="dropdown-content">
-                      <a href="cadastrar-aposentados.html">Cadastrar Aposentados</a>
+                      <a href="cadastrar-aposentados.php">Cadastrar Aposentados</a>
                       <a href="gerenciar-aposentados.html">Gerenciar Aposentados</a>
                     </div>
                 </li>
@@ -56,9 +56,12 @@
     <article class="formato-pagina-corpo-imagem">
         <div class="imagem">
             <img src="../images/undraw_personal_site_re_c4bp (1).svg">
-        </div>    
+        </div>
+        
+        
         <div class="form">
-            <form action="inserir-arquivos-aposentado.html">
+            <form action="" name="criarAposentado" method="POST">
+
                 <div class="form-header">
                     <div class="title">
                         <h1>Cadastro de aposentados</h1>
@@ -67,28 +70,28 @@
 
                 <div class="input-group">
                     <div class="input-box">
-                        <label for="firstname">Nome completo</label>
-                        <input id="firstname" type="text" name="firstname" placeholder="Digite o nome completo">
+                        <label for="nome">Nome completo</label>
+                        <input id="nome" type="text" name="nome" placeholder="Digite o nome completo" required>
                     </div>
 
                     <div class="input-box">
-                        <label for="data-nascimento">Data de nascimento</label>
-                        <input id="data-nascimento" type="date" name="data-nascimento" placeholder="Digite a data de nascimento">
+                        <label for="dataNascimento">Data de nascimento</label>
+                        <input id="dataNascimento" type="date" name="dataNascimento" required>
                     </div>
 
                     <div class="input-box">
                         <label for="rg">Carteira de Identidade</label>
-                        <input id="rg" type="number" name="rg" placeholder="Digite o RG" required>
+                        <input id="rg" type="number" name="rg" required>
                     </div>
 
                     <div class="input-box">
                         <label for="CPF">CPF</label>
-                        <input id="CPF" type="number" name="CPF" placeholder="Digite o CPF">
+                        <input id="CPF" type="number" name="CPF" required>
                     </div>
 
                     <div class="input-box">
-                        <label for="carteira-trabalho">Carteira de trabalho</label>
-                        <input id="carteira-trabalho" type="text" name="carteira-trabalho" placeholder="Dados da carteira de trabalho">
+                        <label for="carteiraTrabalho">Carteira de trabalho</label>
+                        <input id="carteiraTrabalho" type="text" name="carteiraTrabalho" placeholder="Dados carteira de trabalho">
                     </div>
 
                     <div class="input-box">
@@ -97,13 +100,61 @@
                     </div>
 
                     <div class="input-box">
-                        <label for="number">Celular</label>
-                        <input id="number" type="tel" name="number" placeholder="(xx) 9xxxx-xxxx">
+                        <label for="celular">Celular</label>
+                        <input id="celular" type="tel" name="celular" placeholder="(xx) 9xxxx-xxxx">
                     </div>
 
                     <div class="input-box">
-                        <label for="rua">Rua</label>
-                        <input id="rua" type="text" name="rua" placeholder="Rua Adolfo Maia, 102">
+                        <label for="logradouro">Rua</label>
+                        <input id="logradouro" type="text" name="logradouro" placeholder="Rua Adolfo Maia">
+                    </div>
+
+                    <div class="input-box">
+                        <label for="numero">Número da casa</label>
+                        <input id="numero" type="text" name="numero" placeholder="102">
+                    </div>
+
+                    <div class="input-box">
+                        <label for="bairro">Bairro</label>
+                        <input id="bairro" type="text" name="bairro" placeholder="Centro">
+                    </div>
+
+                    <div class="input-box">
+                        <label for="cidade">Cidade</label>
+                        <input id="cidade" type="text" name="cidade" placeholder="São Bento">
+                    </div>
+
+                    <div class="input-box">
+                        <label for="estado">Estado</label>
+                        <select id="estado" name="estado">
+                            <option value="AC">Acre</option>
+                            <option value="AL">Alagoas</option>
+                            <option value="AP">Amapá</option>
+                            <option value="AM">Amazonas</option>
+                            <option value="BA">Bahia</option>
+                            <option value="CE">Ceará</option>
+                            <option value="DF">Distrito Federal</option>
+                            <option value="ES">Espírito Santo</option>
+                            <option value="GO">Goiás</option>
+                            <option value="MA">Maranhão</option>
+                            <option value="MT">Mato Grosso</option>
+                            <option value="MS">Mato Grosso do Sul</option>
+                            <option value="MG">Minas Gerais</option>
+                            <option value="PA">Pará</option>
+                            <option value="PB">Paraíba</option>
+                            <option value="PR">Paraná</option>
+                            <option value="PE">Pernambuco</option>
+                            <option value="PI">Piauí</option>
+                            <option value="RJ">Rio de Janeiro</option>
+                            <option value="RN">Rio Grande do Norte</option>
+                            <option value="RS">Rio Grande do Sul</option>
+                            <option value="RO">Rondônia</option>
+                            <option value="RR">Roraima</option>
+                            <option value="SC">Santa Catarina</option>
+                            <option value="SP">São Paulo</option>
+                            <option value="SE">Sergipe</option>
+                            <option value="TO">Tocantins</option>
+                        </select>
                     </div>
 
                 </div>
