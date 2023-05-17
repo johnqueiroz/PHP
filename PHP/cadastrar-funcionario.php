@@ -11,26 +11,32 @@
 </head>
 <body>
 
-    <?php
+<?php
 
-      // Incluindo o arquivo
-      require '../PHP/Funcionarios.php';
+    require '../PHP/Conexao.php';
+    require '../PHP/Funcionarios.php';
 
-      // TROCAR O NOME LISTAR!!! NÃO ESTOU LISTANDO NADA AINDA!!!
+    $formData = filter_input_array(INPUT_POST, FILTER_DEFAULT);
 
-      // Instanciando a classe
-      // Criando o objeto $conectarFuncionarios
-      $conectarFuncionarios = new Funcionarios();
+    if(!empty($formData['EnvioAddFuncionario'])){
+        //var_dump($formData);
+        $createUser = new Funcionarios();
+        $createUser->formData = $formData;
+        $value = $createUser->inserir();
 
-      // Instanciar o metodo listar
-      $result = $conectarFuncionarios->conectar_Bd();
+        if($value){
+          header("Location: login.php");
+        }else{
+            echo "<p style='color: #f00;'>Erro: Usuário não cadastrado com sucesso!</p>";
+        }
 
-      echo $result;
-    ?>
+    }
+
+?>
 
     <div class="form-area">
         <p class="title">Área de cadastro</p>
-        <form action="../PHP/Funcionarios.php" class="form" method="POST">
+        <form name="CreateUser" action="" class="form" method="POST">
 
             <div class="campos">
                 <i class="fa-solid fa-user fa-lg"></i>
@@ -46,14 +52,9 @@
                 <i class="fa-solid fa-lock fa-lg"></i>
                 <input type="password" name="senha" id="senha" placeholder="Senha" required>
             </div>
-
-            <div class="campos">
-                <i class="fa-solid fa-lock fa-lg"></i>
-                <input type="password" name="senha" id="senha" placeholder="Confirmar senha" required>
-            </div>
             
             <div class="button">
-              <button type="submit" class="button-content">Cadastrar</button>
+              <button type="submit" name="EnvioAddFuncionario" value="Cadastrar" class="button-content">Cadastrar</button>
             </div>
 
         </form>

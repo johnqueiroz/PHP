@@ -11,9 +11,39 @@
 </head>
 <body>
 
+<?php
+
+    require '../PHP/Conexao.php';
+    require '../PHP/Funcionarios.php';
+
+    $formData = filter_input_array(INPUT_POST, FILTER_DEFAULT);
+
+    if(!empty($formData['loginFuncionario'])){
+        var_dump($formData);
+        $listarFunc = new Funcionarios();
+        $listarFunc->formData = $formData;
+        $value = $listarFunc->verificarConta();
+
+        if($value){
+            foreach ($value as $row_user) {
+                //var_dump($row_user);
+                extract($row_user);
+
+                echo $senha;
+            }        
+
+        }else{
+            echo "<p style='color: #f00;'>Erro</p>";
+        }
+
+    }
+
+?>
+
+
     <div class="form-area">
         <p class="title">Área de login</p>
-        <form action="index.html" class="form">
+        <form name="login" action="" class="form" method="POST">
 
             <div class="campos">
                 <i class="fa-solid fa-user fa-lg"></i>
@@ -26,12 +56,12 @@
             </div>
             
             <div class="button">
-                <button class="button-content">Acessar</button>
+                <button type="submit" name="loginFuncionario" value="Acessar" class="button-content">Acessar</button>
             </div>
 
             <div class="rodape">
                 <div class="foot-page-left">
-                    <a href="cadastrar-funcionario.html">Cadastrar</a>
+                    <a href="cadastrar-funcionario.php">Cadastrar</a>
                 </div>
 
                 <div class="foot-page-right">

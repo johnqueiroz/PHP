@@ -1,23 +1,47 @@
 <?php
 
-require '../PHP/Conexao.php';
+class Funcionarios extends Conexao{
 
-class Funcionarios{
+  public object $conn;
+  public array $formData;
 
-    public $conexao;
+  public function inserir(): bool{
 
-    public function conectar_Bd(){
-      $conn = new Conexao;
-      $this->conexao = $conn->conectar();
+    $this->conn = $this->conectar();
+
+    $query_inserir = "INSERT INTO `funcionarios` (nome, email, senha) VALUES (:nome, :email, :senha)";
+    $cadastrarFuncionario = $this->conn->prepare($query_inserir);
+
+    $cadastrarFuncionario->bindParam(':nome', $this->formData['nome'], PDO::PARAM_STR);
+    $cadastrarFuncionario->bindParam(':email', $this->formData['email'], PDO::PARAM_STR);
+
+    $senha_cript = password_hash( $this->formData['senha'], PASSWORD_DEFAULT);
+    $cadastrarFuncionario->bindParam(':senha', $senha_cript);
+
+    $cadastrarFuncionario->execute();
+
+    if ($cadastrarFuncionario->rowCount()){
+      return true;
+    }else{
+      return false;
     }
+  }
 
+  public function verificarConta(): array
+    {
+        $this->conn = $this->conectar();
+        $query_verificar = "SELECT email, senha FROM funcionarios WHERE email";
+        $verificar_entrada = $this->conn->prepare($query_verificar);
+        $verificar_entrada->execute();
+        $retorno = $verificar_entrada->fetchAll();
 
-    public function inserir_Bd(){
-        conectar_Bd();
+        return $retorno;
 
-        $dados_Funcionarios = filter_input_array(INPUT_POST, FILTER_DEFAULT);
-        var_dump($dados_Funcionarios);
-
-        //$query_inserir = "INSERT INTO `funcionarios` (`nome`, `email`, `senha`, `niveis_acesso_id`) VALUES ('John Emerson Ferreira Regis Filho\', \'johnemerson67@gmail.com\', \'john123123\', \'1\');";
+        /*if(password_verify(:senha, $retorno['senha'])){
+          $verificar_entrada->bindParam(':senha', $this->formData['senha'], PDO::PARAM_STR);
+          return true;
+        }else{
+          return false;
+        }*/
     }
 }
