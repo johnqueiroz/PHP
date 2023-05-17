@@ -27,21 +27,20 @@ class Funcionarios extends Conexao{
     }
   }
 
-  public function verificarConta(): array
+  public function verificarConta(): bool
     {
         $this->conn = $this->conectar();
-        $query_verificar = "SELECT email, senha FROM funcionarios WHERE email";
+        $query_verificar = "SELECT email, senha FROM funcionarios WHERE email =:email  LIMIT 1";
         $verificar_entrada = $this->conn->prepare($query_verificar);
+
+        $verificar_entrada->bindParam(':email', $this->formData['email'], PDO::PARAM_STR);
         $verificar_entrada->execute();
-        $retorno = $verificar_entrada->fetchAll();
+        $retorno = $verificar_entrada->fetch();
 
-        return $retorno;
-
-        /*if(password_verify(:senha, $retorno['senha'])){
-          $verificar_entrada->bindParam(':senha', $this->formData['senha'], PDO::PARAM_STR);
+        if(password_verify($this->formData['senha'], $retorno['senha'])){
           return true;
         }else{
           return false;
-        }*/
+        }
     }
 }

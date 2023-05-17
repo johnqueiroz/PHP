@@ -1,3 +1,7 @@
+<?php
+session_start();
+ob_start();
+?>
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -19,22 +23,16 @@
     $formData = filter_input_array(INPUT_POST, FILTER_DEFAULT);
 
     if(!empty($formData['loginFuncionario'])){
-        var_dump($formData);
+    
         $listarFunc = new Funcionarios();
         $listarFunc->formData = $formData;
         $value = $listarFunc->verificarConta();
 
         if($value){
-            foreach ($value as $row_user) {
-                //var_dump($row_user);
-                extract($row_user);
-
-                echo $senha;
-            }        
-
-        }else{
-            echo "<p style='color: #f00;'>Erro</p>";
-        }
+            header("Location: index.php");
+          }else{
+              echo "<p style='color: #f00;'>E-mail ou senha incorretos</p>";
+          }
 
     }
 

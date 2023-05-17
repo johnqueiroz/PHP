@@ -1,3 +1,8 @@
+<?php
+session_start();
+ob_start();
+?>
+
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -19,7 +24,6 @@
     $formData = filter_input_array(INPUT_POST, FILTER_DEFAULT);
 
     if(!empty($formData['EnvioAddFuncionario'])){
-        //var_dump($formData);
         $createUser = new Funcionarios();
         $createUser->formData = $formData;
         $value = $createUser->inserir();
