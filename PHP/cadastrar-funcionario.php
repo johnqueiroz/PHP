@@ -18,6 +18,7 @@ ob_start();
 
 <?php
 
+    //Incluindo classes que serao utilizadas
     require '../PHP/Conexao.php';
     require '../PHP/Funcionarios.php';
 

@@ -31,7 +31,7 @@ ob_start();
         if($value){
             header("Location: index.php");
           }else{
-              echo "<p style='color: #f00;'>E-mail ou senha incorretos</p>";
+              echo "<p style='color: #f00; display: flex; justify-content: center;'><b>E-mail ou senha incorretos</b></p>";
           }
 
     }
