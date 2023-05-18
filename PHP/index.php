@@ -64,7 +64,15 @@ ob_start();
         <div class="row">
             <div class="box box-first">
                 <span class="fa-solid fa-person-cane fa-2xl"></span>
-                <span><b>291</b></span>
+                <span><b><?php
+                 require '../PHP/Conexao.php';
+                 require '../PHP/Aposentados.php';
+
+                 $createAposentado = new Aposentados();
+                 $quantidadeAposentados = $createAposentado->quantidadeAposentados();
+
+                echo $quantidadeAposentados;
+                ?></b></span>
                 <span><b>Aposentados</b></span>
             </div>
 
