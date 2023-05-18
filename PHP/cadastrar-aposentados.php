@@ -1,5 +1,7 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
+<!-- Cabeçalho com links e titulo da pagina-->
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -10,12 +12,15 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <title>Cadastro de aposentados</title>
 </head>
+
+
 <body>
 
+    <!-- Inicio da navbar-->
     <nav class="navbar">
 
-        <div class="max-width"> <!-- Iniciando div max-width-->
-            <div class="logo"><a href="index.html">IMPRESB</a></div> 
+        <div class="max-width">
+            <div class="logo"><a href="index.php">IMPRESB</a></div> 
 
             <ul class="menu" id="menu-site">
                 <li class="dropdown">
@@ -43,22 +48,53 @@
                 </li>
 
                 <li class="dropdown">
-                    <a href="login.html"><i class="fa-solid fa-arrow-right-from-bracket"></i></a>
+                    <a href="login.php"><i class="fa-solid fa-arrow-right-from-bracket"></i></a>
                  </li>
             </ul>
 
             <div class="menu-btn" id="menu-btn">
                 <i class="fa-solid fa-bars" id="menu-icon"></i>
             </div>
-        </div> <!-- Fechando div max-width-->
+        </div> 
     </nav>
+    <!-- Fim da navbar-->
 
+
+    <!-- Inicio do corpo da pagina, com a imagem e o formulario-->
     <article class="formato-pagina-corpo-imagem">
+
+    <!--Imagem-->
         <div class="imagem">
             <img src="../images/undraw_personal_site_re_c4bp (1).svg">
         </div>
         
+        <?php
+            //Incluindo classes que serao utilizadas
+            require '../PHP/Conexao.php';
+            require '../PHP/Aposentados.php';
+
+            $formData = filter_input_array(INPUT_POST, FILTER_DEFAULT);
+
+            if(!empty($formData['infoAposentado'])){
+                $createAposentado = new Aposentados();
+                $createAposentado->formData = $formData;
+                $cadastroAposentado = $createAposentado->inserirAposentado();
+                $cadastroEndereco = $createAposentado->inserirEnderecoAposentado();
+    
+                if($cadastroAposentado and $cadastroEndereco){
+                    header("Location: index.php");
+                }else{
+                     echo "<p style='color: #f00;'>Erro: Aposentado não cadastrado com sucesso!</p>";
+                }
+            }
+
+
         
+            
+
+
+        ?>
+        <!-- Inicio do formulario -->
         <div class="form">
             <form action="" name="criarAposentado" method="POST">
 
@@ -71,12 +107,12 @@
                 <div class="input-group">
                     <div class="input-box">
                         <label for="nome">Nome completo</label>
-                        <input id="nome" type="text" name="nome" placeholder="Digite o nome completo" required>
+                        <input id="nome" type="text" name="nome" required>
                     </div>
 
                     <div class="input-box">
-                        <label for="dataNascimento">Data de nascimento</label>
-                        <input id="dataNascimento" type="date" name="dataNascimento" required>
+                        <label for="data_nascimento">Data de nascimento</label>
+                        <input id="data_nascimento" type="date" name="data_nascimento" required>
                     </div>
 
                     <div class="input-box">
@@ -85,43 +121,48 @@
                     </div>
 
                     <div class="input-box">
-                        <label for="CPF">CPF</label>
-                        <input id="CPF" type="number" name="CPF" required>
+                        <label for="cpf">CPF</label>
+                        <input id="cpf" type="number" name="cpf" required>
                     </div>
 
                     <div class="input-box">
-                        <label for="carteiraTrabalho">Carteira de trabalho</label>
-                        <input id="carteiraTrabalho" type="text" name="carteiraTrabalho" placeholder="Dados carteira de trabalho">
+                        <label for="ctps">Carteira de trabalho</label>
+                        <input id="ctps" type="text" name="ctps" >
+                    </div>
+                    
+                    <div class="input-box">
+                        <label for="salario">Salário</label>
+                        <input id="salario" type="number" name="salario">
                     </div>
 
                     <div class="input-box">
                         <label for="email">E-mail</label>
-                        <input id="email" type="email" name="email" placeholder="Digite o e-mail">
+                        <input id="email" type="email" name="email" >
                     </div>
 
                     <div class="input-box">
                         <label for="celular">Celular</label>
-                        <input id="celular" type="tel" name="celular" placeholder="(xx) 9xxxx-xxxx">
+                        <input id="celular" type="tel" name="celular">
                     </div>
 
                     <div class="input-box">
                         <label for="logradouro">Rua</label>
-                        <input id="logradouro" type="text" name="logradouro" placeholder="Rua Adolfo Maia">
+                        <input id="logradouro" type="text" name="logradouro">
                     </div>
 
                     <div class="input-box">
                         <label for="numero">Número da casa</label>
-                        <input id="numero" type="text" name="numero" placeholder="102">
+                        <input id="numero" type="number" name="numero" >
                     </div>
 
                     <div class="input-box">
                         <label for="bairro">Bairro</label>
-                        <input id="bairro" type="text" name="bairro" placeholder="Centro">
+                        <input id="bairro" type="text" name="bairro" >
                     </div>
 
                     <div class="input-box">
                         <label for="cidade">Cidade</label>
-                        <input id="cidade" type="text" name="cidade" placeholder="São Bento">
+                        <input id="cidade" type="text" name="cidade" >
                     </div>
 
                     <div class="input-box">
@@ -156,41 +197,22 @@
                             <option value="TO">Tocantins</option>
                         </select>
                     </div>
-
-                </div>
-
-                <div class="gender-inputs">
-                    <div class="gender-title">
-                        <h6>Gênero</h6>
-                    </div>
-
-                    <div class="gender-group">
-                        <div class="gender-input">
-                            <input id="female" type="radio" name="gender">
-                            <label for="female">Feminino</label>
-                        </div>
-
-                        <div class="gender-input">
-                            <input id="male" type="radio" name="gender">
-                            <label for="male">Masculino</label>
-                        </div>
-
-                        <div class="gender-input">
-                            <input id="others" type="radio" name="gender">
-                            <label for="others">Outros</label>
-                        </div>
-
-                        <div class="gender-input">
-                            <input id="none" type="radio" name="gender">
-                            <label for="none">Prefiro não dizer</label>
-                        </div>
+                    
+                    <div class="input-box">
+                        <label for="sexo">Estado</label>
+                        <select id="sexo" name="sexo">
+                            <option value="1">Homem</option>
+                            <option value="2">Mulher</option>
+                        </select>
                     </div>
                 </div>
 
                 <div class="continue-button">
-                    <button><a href="inserir-arquivos-aposentado.html">Continuar</a></button>
+                    <button class="button-content" type="submit" name="infoAposentado" value="Continuar">Continuar</button>
                 </div>
             </form>
+
+            <!-- Fim do formulario -->
         </div>
     </article>
 
