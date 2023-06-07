@@ -51,7 +51,6 @@ class Pensionistas extends Conexao{
         $cadastrarEnderecoAposentado->bindParam(':estado', $this->formData['estado'], PDO::PARAM_STR);
         $cadastrarEnderecoAposentado->bindParam(':cpf', $this->formData['cpf'], PDO::PARAM_STR);
 
-
         $cadastrarEnderecoAposentado->execute();
 
         if ($cadastrarEnderecoAposentado->rowCount()){
@@ -73,7 +72,7 @@ class Pensionistas extends Conexao{
         // Fetch the result from the PDOStatement object
         $count = $verificarQuantidadePensionistas->fetchColumn();
         
-        // Convert the result to a string
+        // Convert the result to a stringaaaaaaa
         $countAsString = strval($count);
         
         return $countAsString;
