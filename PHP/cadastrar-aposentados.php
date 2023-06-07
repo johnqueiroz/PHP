@@ -27,14 +27,14 @@
                     <a href="#aposentados" class="dropbtn"><b>Aposentados</b></a>
                     <div class="dropdown-content">
                       <a href="cadastrar-aposentados.php">Cadastrar Aposentados</a>
-                      <a href="gerenciar-aposentados.html">Gerenciar Aposentados</a>
+                      <a href="gerenciar-aposentados.php">Gerenciar Aposentados</a>
                     </div>
                 </li>
 
                 <li class="dropdown">
                     <a href="#pensionistas" class="dropbtn"><b>Pensionistas</b></a>
                     <div class="dropdown-content">
-                      <a href="cadastrar-pensionista.html">Cadastrar Pensionistas</a>
+                      <a href="cadastrar-pensionista.php">Cadastrar Pensionistas</a>
                       <a href="gerenciar-pensionista.html">Gerenciar Pensionistas</a>
                     </div>
                 </li>
@@ -87,8 +87,6 @@
                      echo "<p style='color: #f00;'>Erro: Aposentado não cadastrado com sucesso!</p>";
                 }
             }
-
-
         
             
 
@@ -199,10 +197,10 @@
                     </div>
                     
                     <div class="input-box">
-                        <label for="sexo">Estado</label>
+                        <label for="sexo">Sexo</label>
                         <select id="sexo" name="sexo">
-                            <option value="1">Homem</option>
-                            <option value="2">Mulher</option>
+                            <option value="1">Masculino</option>
+                            <option value="2">Feminino</option>
                         </select>
                     </div>
                 </div>

@@ -26,14 +26,14 @@ ob_start();
                     <a href="#aposentados" class="dropbtn"><b>Aposentados</b></a>
                     <div class="dropdown-content">
                       <a href="cadastrar-aposentados.php">Cadastrar Aposentados</a>
-                      <a href="gerenciar-aposentados.html">Gerenciar Aposentados</a>
+                      <a href="gerenciar-aposentados.php">Gerenciar Aposentados</a>
                     </div>
                 </li>
 
                 <li class="dropdown">
                     <a href="#pensionistas" class="dropbtn"><b>Pensionistas</b></a>
                     <div class="dropdown-content">
-                      <a href="cadastrar-pensionista.html">Cadastrar Pensionistas</a>
+                      <a href="cadastrar-pensionista.php">Cadastrar Pensionistas</a>
                       <a href="gerenciar-pensionista.html">Gerenciar Pensionistas</a>
                     </div>
                 </li>

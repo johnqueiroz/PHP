@@ -18,7 +18,7 @@
     <nav class="navbar">
 
         <div class="max-width"> <!-- Iniciando div max-width-->
-            <div class="logo"><a href="index.html">IMPRESB</a></div> 
+            <div class="logo"><a href="index.php">IMPRESB</a></div> 
 
             <ul class="menu" id="menu-site">
                 <li class="dropdown">
@@ -32,8 +32,8 @@
                 <li class="dropdown">
                     <a href="#pensionistas" class="dropbtn"><b>Pensionistas</b></a>
                     <div class="dropdown-content">
-                      <a href="cadastrar-pensionista.html">Cadastrar Pensionistas</a>
-                      <a href="gerenciar-pensionista.html">Gerenciar Pensionistas</a>
+                      <a href="cadastrar-pensionista.php">Cadastrar Pensionistas</a>
+                      <a href="gerenciar-pensionista.php">Gerenciar Pensionistas</a>
                     </div>
                 </li>
 

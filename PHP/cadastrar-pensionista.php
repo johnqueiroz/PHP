@@ -14,15 +14,15 @@
 
     <nav class="navbar">
 
-        <div class="max-width"> <!-- Iniciando div max-width-->
-            <div class="logo"><a href="index.html">IMPRESB</a></div> 
+        <div class="max-width"> <!-- Iniciando cabecalho do site-->
+            <div class="logo"><a href="index.php">IMPRESB</a></div> 
 
             <ul class="menu" id="menu-site">
                 <li class="dropdown">
                     <a href="#aposentados" class="dropbtn"><b>Aposentados</b></a>
                     <div class="dropdown-content">
-                      <a href="cadastrar-aposentados.html">Cadastrar Aposentados</a>
-                      <a href="gerenciar-aposentados.html">Gerenciar Aposentados</a>
+                      <a href="cadastrar-aposentados.php">Cadastrar Aposentados</a>
+                      <a href="gerenciar-aposentados.php">Gerenciar Aposentados</a>
                     </div>
                 </li>
 
@@ -50,15 +50,48 @@
             <div class="menu-btn" id="menu-btn">
                 <i class="fa-solid fa-bars" id="menu-icon"></i>
             </div>
-        </div> <!-- Fechando div max-width-->
+        </div> <!-- Fechando cabecalho -->
     </nav>
 
+  <!-- Inicio do corpo da pagina, com a imagem e o formulario-->
     <article class="formato-pagina-corpo-imagem">
+
+        <!--Imagem-->
         <div class="imagem">
             <img src="../images/undraw_my_files_swob (1).svg">
-        </div>    
+        </div>   
+        
+        <?php
+            //Incluindo classes que serao utilizadas
+            require '../PHP/Conexao.php';
+            require '../PHP/Pensionistas.php';
+
+            $formData = filter_input_array(INPUT_POST, FILTER_DEFAULT);
+
+            if(!empty($formData['infoPensionista'])){
+                $createPensionista = new Pensionistas();
+                $createPensionista->formData = $formData;
+                $cadastroPensionista = $createPensionista->inserirPensionista();
+                $cadastroEndereco = $createPensionista->inserirEnderecoPensionista();
+    
+                if($cadastroPensionista and $cadastroEndereco){
+                    header("Location: index.php");
+                }else{
+                     echo "<p style='color: #f00;'>Erro: Pensionista não cadastrado com sucesso!</p>";
+                }
+            }
+        
+            
+
+
+        ?>
+
+
+     <!-- Inicio do formulario -->
         <div class="form">
-            <form action="inserir-arquivos-pensionista.html">
+
+        <form action="" name="criarPensionista" method="POST">
+
                 <div class="form-header">
                     <div class="title">
                         <h1>Cadastro de pensionistas</h1>
@@ -67,8 +100,8 @@
 
                 <div class="input-group">
                     <div class="input-box">
-                        <label for="firstname">Nome completo</label>
-                        <input id="firstname" type="text" name="firstname" placeholder="Digite o nome completo" required>
+                        <label for="nome">Nome completo</label>
+                        <input id="nome" type="text" name="nome" placeholder="Digite o nome completo" required>
                     </div>
                     
                     <div class="input-box">
@@ -82,8 +115,8 @@
                     </div>
 
                     <div class="input-box">
-                        <label for="CPF">CPF</label>
-                        <input id="CPF" type="number" name="CPF" placeholder="Digite o CPF" required>
+                        <label for="cpf">CPF</label>
+                        <input id="cpf" type="number" name="cpf" placeholder="Digite o CPF" required>
                     </div>
 
                     <div class="input-box">
@@ -111,43 +144,21 @@
                         <input id="data-nascimento" type="date" name="data-nascimento" required>
                     </div>
 
-
-
-
                 </div>
 
-                <div class="gender-inputs">
-                    <div class="gender-title">
-                        <h6>Gênero</h6>
+                <div class="input-box">
+                        <label for="sexo">Sexo</label>
+                        <select id="sexo" name="sexo">
+                            <option value="1">Masculino</option>
+                            <option value="2">Feminino</option>
+                        </select>
                     </div>
-
-                    <div class="gender-group">
-                        <div class="gender-input">
-                            <input id="female" type="radio" name="gender">
-                            <label for="female">Feminino</label>
-                        </div>
-
-                        <div class="gender-input">
-                            <input id="male" type="radio" name="gender">
-                            <label for="male">Masculino</label>
-                        </div>
-
-                        <div class="gender-input">
-                            <input id="others" type="radio" name="gender">
-                            <label for="others">Outros</label>
-                        </div>
-
-                        <div class="gender-input">
-                            <input id="none" type="radio" name="gender">
-                            <label for="none">Prefiro não dizer</label>
-                        </div>
-                    </div>
-                </div>
 
                 <div class="continue-button">
-                    <button><a href="inserir-arquivos-pensionista.html">Continuar</a></button>
+                    <button class="button-content" type="submit" name="infoPensionista" value="Continuar">Continuar</button>
                 </div>
             </form>
+            <!-- Fim do formulario -->
         </div>
     </article>
 
