@@ -34,8 +34,6 @@ class Pensionistas extends Conexao{
         }
     }
 
-
-
     public function inserirEnderecoPensionista():bool{
 
         $this->conn = $this->conectar();
